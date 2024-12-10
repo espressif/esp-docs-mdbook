@@ -1,5 +1,7 @@
 # esp-docs-mdbook Theme
 
+![Example Docs](https://img.shields.io/badge/https%3A%2F%2Fespressif.github.io%2Fesp-docs-mdbook%2F?style=plastic&logoColor=%23e7352c&label=Example&labelColor=e7352c)
+
 A custom mdBook theme based on esp-docs styling, providing a consistent look and feel for your documentation.
 
 ## Features
