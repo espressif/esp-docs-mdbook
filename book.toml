@@ -1,0 +1,19 @@
+[book]
+authors = ["Petr Gadorek"]
+language = "en"
+multilingual = false
+src = "src"
+title = "ESP-docs mdbook theme"
+
+
+[build]
+build-dir = "book"
+extra-watch-dirs = ["theme"]
+
+[output.html]
+theme = "theme"
+default-theme = "theme"
+smart-punctuation = true
+git-repository-url="https://github.com/espressif/esp-docs-mdbook"
+copy-theme = true
+additional-files = ["theme"]
