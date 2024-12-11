@@ -20,22 +20,22 @@
   <link rel="shortcut icon" href="https://www.espressif.com/sites/all/themes/espressif/favicon.ico"
     type="image/vnd.microsoft.icon">
   <!-- Fonts -->
-  <link rel="stylesheet" href="{{ path_to_root }}FontAwesome/css/font-awesome.css">
+  <link rel="stylesheet" href="{{ config.book.site-url }}FontAwesome/css/font-awesome.css">
   {{#if copy_fonts}}
-  <link rel="stylesheet" href="{{ path_to_root }}fonts/fonts.css">
+  <link rel="stylesheet" href="{{ config.book.site-url }}fonts/fonts.css">
   {{/if}}
 
-  <link rel="stylesheet" href="{{ path_to_root }}css/general.css">
+  <link rel="stylesheet" href="{{ config.book.site-url }}css/general.css">
 
   <!-- Highlight.js Stylesheets -->
-  <link rel="stylesheet" href="{{ path_to_root }}highlight.css">
-  <link rel="stylesheet" href="{{ path_to_root }}tomorrow-night.css">
-  <link rel="stylesheet" href="{{ path_to_root }}ayu-highlight.css">
+  {{!-- <link rel="stylesheet" href="{{ config.book.site-url }}highlight.css">
+  <link rel="stylesheet" href="{{ config.book.site-url }}tomorrow-night.css">
+  <link rel="stylesheet" href="{{ config.book.site-url }}ayu-highlight.css"> --}}
   <script>
-    var path_to_root = "{{ path_to_root }}";
+    var config.book.site-url = "{{ config.book.site-url }}";
     var default_theme = "esp";
   </script>
-  <script src="{{ path_to_root }}toc.js"></script>
+  <script src="{{ config.book.site-url }}toc.js"></script>
 </head>
 
 <body>
@@ -116,7 +116,7 @@
     <ul class="nav-menu">
       <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
       <noscript>
-        <iframe class="sidebar-iframe-outer" src="{{ path_to_root }}toc.html"></iframe>
+        <iframe class="sidebar-iframe-outer" src="{{ config.book.site-url }}toc.html"></iframe>
       </noscript>
     </ul>
   </nav>
@@ -138,13 +138,13 @@
 
     <div class="navigation-buttons">
       {{#previous}}
-      <button class="nav-button"><a rel="prev" href="{{ path_to_root }}{{link}}" class="nav-chapters previous"
+      <button class="nav-button"><a rel="prev" href="{{ config.book.site-url }}{{link}}" class="nav-chapters previous"
           title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
           « Previous
         </a></button>
       {{/previous}}
       {{#next}}
-      <button class="nav-button"><a rel="next prefetch" href="{{ path_to_root }}{{link}}" class="nav-chapters next"
+      <button class="nav-button"><a rel="next prefetch" href="{{ config.book.site-url }}{{link}}" class="nav-chapters next"
           title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
           Next »
         </a></button>
@@ -204,26 +204,26 @@
   {{/if}}
 
   {{#if playground_js}}
-  <script src="{{ path_to_root }}ace.js"></script>
-  <script src="{{ path_to_root }}editor.js"></script>
-  <script src="{{ path_to_root }}mode-rust.js"></script>
-  <script src="{{ path_to_root }}theme-dawn.js"></script>
-  <script src="{{ path_to_root }}theme-tomorrow_night.js"></script>
+  <script src="{{ config.book.site-url }}ace.js"></script>
+  <script src="{{ config.book.site-url }}editor.js"></script>
+  <script src="{{ config.book.site-url }}mode-rust.js"></script>
+  <script src="{{ config.book.site-url }}theme-dawn.js"></script>
+  <script src="{{ config.book.site-url }}theme-tomorrow_night.js"></script>
   {{/if}}
 
   {{#if search_js}}
-  <script src="{{ path_to_root }}elasticlunr.min.js"></script>
-  <script src="{{ path_to_root }}mark.min.js"></script>
-  <script src="{{ path_to_root }}searcher.js"></script>
+  <script src="{{ config.book.site-url }}elasticlunr.min.js"></script>
+  <script src="{{ config.book.site-url }}mark.min.js"></script>
+  <script src="{{ config.book.site-url }}searcher.js"></script>
   {{/if}}
 
-  <script src="{{ path_to_root }}clipboard.min.js"></script>
-  <script src="{{ path_to_root }}highlight.js"></script>
-  <script src="{{ path_to_root }}book.js"></script>
+  <script src="{{ config.book.site-url }}clipboard.min.js"></script>
+  <script src="{{ config.book.site-url }}highlight.js"></script>
+  <script src="{{ config.book.site-url }}book.js"></script>
 
   <!-- Custom JS scripts -->
   {{#each additional_js}}
-  <script src="{{ ../path_to_root }}{{this}}"></script>
+  <script src="{{ ../config.book.site-url }}{{this}}"></script>
   {{/each}}
 
   {{#if is_print}}
@@ -295,7 +295,7 @@
         const cleanPath = path.replace(/^\/|\/index\.html$|\/$/g, '');
 
         // Split path into components
-        const components = cleanPath.split('/').filter(Boolean);
+        const components = cleanPath.replace('{{ config.book.site-url }}', '').split('/').filter(Boolean);
 
         // Get the breadcrumb list element
         const breadcrumbList = document.getElementById('breadcrumb-list');
