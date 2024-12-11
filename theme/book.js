@@ -350,6 +350,7 @@ function playground_text(playground, hidden = true) {
 
   function get_theme() {
     var theme;
+    return theme;
     try {
       theme = localStorage.getItem("mdbook-theme");
     } catch (e) {}
@@ -361,6 +362,7 @@ function playground_text(playground, hidden = true) {
   }
 
   function set_theme(theme, store = true) {
+    return;
     let ace_theme;
 
     if (theme == "coal" || theme == "navy") {
@@ -411,36 +413,36 @@ function playground_text(playground, hidden = true) {
 
   set_theme(theme, false);
 
-  themeToggleButton.addEventListener("click", function () {
-    if (themePopup.style.display === "block") {
-      hideThemes();
-    } else {
-      showThemes();
-    }
-  });
+  // themeToggleButton.addEventListener("click", function () {
+  //   if (themePopup.style.display === "block") {
+  //     hideThemes();
+  //   } else {
+  //     showThemes();
+  //   }
+  // });
 
-  themePopup.addEventListener("click", function (e) {
-    var theme;
-    if (e.target.className === "theme") {
-      theme = e.target.id;
-    } else if (e.target.parentElement.className === "theme") {
-      theme = e.target.parentElement.id;
-    } else {
-      return;
-    }
-    set_theme(theme);
-  });
+  // themePopup.addEventListener("click", function (e) {
+  //   var theme;
+  //   if (e.target.className === "theme") {
+  //     theme = e.target.id;
+  //   } else if (e.target.parentElement.className === "theme") {
+  //     theme = e.target.parentElement.id;
+  //   } else {
+  //     return;
+  //   }
+  //   set_theme(theme);
+  // });
 
-  themePopup.addEventListener("focusout", function (e) {
-    // e.relatedTarget is null in Safari and Firefox on macOS (see workaround below)
-    if (
-      !!e.relatedTarget &&
-      !themeToggleButton.contains(e.relatedTarget) &&
-      !themePopup.contains(e.relatedTarget)
-    ) {
-      hideThemes();
-    }
-  });
+  // themePopup.addEventListener("focusout", function (e) {
+  //   // e.relatedTarget is null in Safari and Firefox on macOS (see workaround below)
+  //   if (
+  //     !!e.relatedTarget &&
+  //     !themeToggleButton.contains(e.relatedTarget) &&
+  //     !themePopup.contains(e.relatedTarget)
+  //   ) {
+  //     hideThemes();
+  //   }
+  // });
 
   // Should not be needed, but it works around an issue on macOS & iOS: https://github.com/rust-lang/mdBook/issues/628
   document.addEventListener("click", function (e) {
@@ -527,28 +529,28 @@ function playground_text(playground, hidden = true) {
   }
 
   // Toggle sidebar
-  sidebarToggleButton.addEventListener("click", function sidebarToggle() {
-    if (body.classList.contains("sidebar-hidden")) {
-      var current_width = parseInt(
-        document.documentElement.style.getPropertyValue("--sidebar-width"),
-        10
-      );
-      if (current_width < 150) {
-        document.documentElement.style.setProperty("--sidebar-width", "150px");
-      }
-      showSidebar();
-    } else if (body.classList.contains("sidebar-visible")) {
-      hideSidebar();
-    } else {
-      if (getComputedStyle(sidebar)["transform"] === "none") {
-        hideSidebar();
-      } else {
-        showSidebar();
-      }
-    }
-  });
+  // sidebarToggleButton.addEventListener("click", function sidebarToggle() {
+  //   if (body.classList.contains("sidebar-hidden")) {
+  //     var current_width = parseInt(
+  //       document.documentElement.style.getPropertyValue("--sidebar-width"),
+  //       10
+  //     );
+  //     if (current_width < 150) {
+  //       document.documentElement.style.setProperty("--sidebar-width", "150px");
+  //     }
+  //     showSidebar();
+  //   } else if (body.classList.contains("sidebar-visible")) {
+  //     hideSidebar();
+  //   } else {
+  //     if (getComputedStyle(sidebar)["transform"] === "none") {
+  //       hideSidebar();
+  //     } else {
+  //       showSidebar();
+  //     }
+  //   }
+  // });
 
-  sidebarResizeHandle.addEventListener("mousedown", initResize, false);
+  // sidebarResizeHandle.addEventListener("mousedown", initResize, false);
 
   function initResize(e) {
     window.addEventListener("mousemove", resize, false);
@@ -692,9 +694,9 @@ function playground_text(playground, hidden = true) {
 (function scrollToTop() {
   var menuTitle = document.querySelector(".menu-title");
 
-  menuTitle.addEventListener("click", function () {
-    document.scrollingElement.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  // menuTitle.addEventListener("click", function () {
+  //   document.scrollingElement.scrollTo({ top: 0, behavior: "smooth" });
+  // });
 })();
 
 (function controllMenu() {
@@ -703,12 +705,12 @@ function playground_text(playground, hidden = true) {
   (function controllPosition() {
     var scrollTop = document.scrollingElement.scrollTop;
     var prevScrollTop = scrollTop;
-    var minMenuY = -menu.clientHeight - 50;
+    // var minMenuY = -menu.clientHeight - 50;
     // When the script loads, the page can be at any scroll (e.g. if you reforesh it).
-    menu.style.top = scrollTop + "px";
+    // menu.style.top = scrollTop + "px";
     // Same as parseInt(menu.style.top.slice(0, -2), but faster
-    var topCache = menu.style.top.slice(0, -2);
-    menu.classList.remove("sticky");
+    // var topCache = menu.style.top.slice(0, -2);
+    // menu.classList.remove("sticky");
     var stickyCache = false; // Same as menu.classList.contains('sticky'), but faster
     document.addEventListener(
       "scroll",
@@ -749,11 +751,11 @@ function playground_text(playground, hidden = true) {
   })();
   (function controllBorder() {
     function updateBorder() {
-      if (menu.offsetTop === 0) {
-        menu.classList.remove("bordered");
-      } else {
-        menu.classList.add("bordered");
-      }
+      // if (menu.offsetTop === 0) {
+      //   menu.classList.remove("bordered");
+      // } else {
+      //   menu.classList.add("bordered");
+      // }
     }
     updateBorder();
     document.addEventListener("scroll", updateBorder, { passive: true });

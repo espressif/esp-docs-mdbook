@@ -4,6 +4,7 @@ language = "en"
 multilingual = false
 src = "src"
 title = "ESP-docs mdbook theme"
+description = "https://espressif.github.io/esp-docs-mdbook/"
 
 
 [build]
@@ -17,3 +18,4 @@ smart-punctuation = true
 git-repository-url="https://github.com/espressif/esp-docs-mdbook"
 copy-theme = true
 additional-files = ["theme"]
+site-url = "/esp-docs-mdbook/"

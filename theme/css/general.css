@@ -105,6 +105,12 @@ h1:visited,
 h2:visited {
 	margin-top: 0;
 	color: #333;
+  text-decoration: none;
+}
+
+h1 a,
+h2 a {
+  text-decoration: none;
 }
 
 .requirements-list {
@@ -145,7 +151,6 @@ h2:visited {
 }
 .main-content a {
 	color: #404040;
-	text-decoration: none; /* Optional: to remove underline from links */
 }
 
 .main-content a:hover {
