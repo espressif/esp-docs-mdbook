@@ -2,13 +2,30 @@
 
 [![Example Docs](https://img.shields.io/badge/https%3A%2F%2Fespressif.github.io%2Fesp-docs-mdbook%2F?style=plastic&logoColor=%23e7352c&label=Example&labelColor=e7352c)](https://espressif.github.io/esp-docs-mdbook/)
 
-A custom mdBook theme based on esp-docs styling, providing a consistent look and feel for your documentation.
+A custom [mdBook](https://github.com/rust-lang/mdBook) theme based on Espressif’s documentation styling, providing a consistent look and feel for your documentation projects.
 
 ## Features
 
 - Clean and modern documentation design
-- Custom styling matching esp-docs aesthetics
+- Styling that aligns with [esp-docs](https://docs.espressif.com/projects/esp-docs/en/latest/) aesthetics
 - Built-in blazing fast full-text search functionality
+
+## Example Project
+
+- An example source project using mdBook and this theme can be found in the [src](src) folder.
+- The project’s configuration file, [book.toml](book.toml), is located in the root directory of the project.
+- A rendered version of the project available on [GitHub Pages](https://espressif.github.io/esp-docs-mdbook/)
+- The deployment pipeline for the example project is defined in the [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) file.
+
+## Real-world Example
+
+You can see an example of a real-world documentation project using this theme at [eim](https://github.com/espressif/idf-im-ui).
+The project includes:
+
+- The [source folder](https://github.com/espressif/idf-im-ui/tree/master/src)
+- The [book.toml file](https://github.com/espressif/idf-im-ui/blob/master/book.toml)
+- The [GitHub Actions workflow](https://github.com/espressif/idf-im-ui/blob/master/.github/workflows/build_docs.yaml) for deployment to [https://docs.espressif.com](https://docs.espressif.com)
+- The rendered documentation available at [https://docs.espressif.com/projects/idf-im-ui/en/latest/](https://docs.espressif.com/projects/idf-im-ui/en/latest/)
 
 ## Installation
 
