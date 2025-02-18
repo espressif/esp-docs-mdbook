@@ -306,7 +306,7 @@
           
           // Handle localStorage for index pages or root
           if (isIndexOrRoot) {
-              localStorage.setItem('base_url', window.location.href);
+              localStorage.setItem('base_url', window.location.href.replace('index.html', ''));
           }
           
           // Get base_url from localStorage or use default
