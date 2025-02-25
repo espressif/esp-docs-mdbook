@@ -168,6 +168,9 @@ blockquote strong {
 	display: block; /* Makes it a block element */
 	margin-bottom: 0px; /* Optional spacing */
 }
+.section {
+	padding-left: 10px;
+}
 .sidebar a {
 	color: #d9d9d9; /* Normal link color */
 	text-decoration: none; /* Optional */
@@ -182,7 +185,6 @@ blockquote strong {
 .sidebar ol {
 	list-style-type: none; /* Removes numbers or dots from ordered lists */
 	margin: 0;
-	margin-top: 30px;
 }
 .searchresults-outer-data {
 	position: fixed; /* or use 'fixed' depending on your requirement */
