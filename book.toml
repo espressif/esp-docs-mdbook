@@ -1,7 +1,6 @@
 [book]
 authors = ["Petr Gadorek"]
 language = "en"
-multilingual = false
 src = "src"
 title = "ESP-docs mdbook theme"
 description = "https://espressif.github.io/esp-docs-mdbook/"
